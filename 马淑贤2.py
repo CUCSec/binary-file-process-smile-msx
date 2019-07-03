@@ -1,7 +1,7 @@
 import struct
 import os
 
-def Fun1(student_id):
+def tamper(student_id):
   name=os.path.abspath(__file__)
   lname=os.path.dirname(name)
   full_name=os.path.join(lname,"lenna.bmp")
@@ -19,7 +19,7 @@ def Fun1(student_id):
   f.close()
 
 
-def Fun2():
+def detect():
   with open('lenna.bmp', 'rb') as f:
     bmp_file_header = f.read(14)
 
@@ -48,6 +48,6 @@ def Fun2():
 
 if __name__ == '__main__':
   import sys
-  Fun1(sys.argv[1])
+  tamper(sys.argv[1])
 
   detect()
